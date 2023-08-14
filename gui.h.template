@@ -1,0 +1,13 @@
+#ifndef GUI_H
+#define GUI_H
+
+#include "lvgl.h"
+
+// static lv_obj_t *labelO2;
+// static lv_obj_t *labelCo2;
+// lv_obj_t *bar1;
+// lv_obj_t *bar2;
+
+void lv_example_get_started_1(void);
+
+#endif

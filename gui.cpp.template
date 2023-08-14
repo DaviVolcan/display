@@ -1,0 +1,49 @@
+
+// #include "lvgl.h"
+#include "gui.h"
+
+lv_obj_t *labelO2;
+lv_obj_t *labelCo2;
+lv_obj_t *bar1;
+lv_obj_t *bar2;
+
+void lv_example_get_started_1(void)
+{
+    /*Change the active screen's background color*/
+    lv_obj_set_style_bg_color(lv_scr_act(), lv_color_hex(0x000000), LV_PART_MAIN);
+    bar1 = lv_bar_create(lv_scr_act());
+    lv_obj_align(bar1, LV_ALIGN_CENTER, 30, -40);
+    lv_obj_set_size(bar1, 200, 40);
+    lv_bar_set_value(bar1, 70, LV_ANIM_ON);
+    bar2 = lv_bar_create(lv_scr_act());
+    lv_obj_align(bar2, LV_ALIGN_CENTER, 30, 40);
+    lv_obj_set_size(bar2, 200, 40);
+    lv_bar_set_value(bar2, 70, LV_ANIM_ON);
+
+    /*Create a white label, set its text and align it to the center*/
+    labelO2 = lv_label_create(lv_scr_act());
+    labelCo2 = lv_label_create(lv_scr_act());
+    // lv_label_set_text_fmt(label, "Hello world; %i oxy ", oxygen);
+    // lv_label_set_text(labelO2, "Hello world");
+    // lv_label_set_text(labelCo2, "Hello world");
+    lv_obj_set_style_text_color(lv_scr_act(), lv_color_hex(0xffffff), LV_PART_MAIN);
+    lv_obj_align(labelO2, LV_ALIGN_CENTER, 30, -40);
+    lv_obj_align(labelCo2, LV_ALIGN_CENTER, 30, 40);
+
+    lv_obj_t *label;
+
+    lv_obj_t *btn1 = lv_btn_create(lv_scr_act());
+    lv_obj_align(btn1, LV_ALIGN_LEFT_MID, 0, -40);
+    lv_obj_set_size(btn1, 70, 40);
+    label = lv_label_create(btn1);
+    lv_label_set_text(label, "O2");
+    lv_obj_center(label);
+    lv_obj_t *label1;
+
+    lv_obj_t *btn2 = lv_btn_create(lv_scr_act());
+    lv_obj_align(btn2, LV_ALIGN_LEFT_MID, 0, 40);
+    lv_obj_set_size(btn2, 70, 40);
+    label1 = lv_label_create(btn2);
+    lv_label_set_text(label1, "CO2");
+    lv_obj_center(label1);
+}
